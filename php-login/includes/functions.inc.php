@@ -1,8 +1,8 @@
 <?php
 
-function emtyImputSignup($name, $email, $username, $pwd, $pwdrepeat) {
-    $result;
-    if (empty($name) || emty ($email) || emty ($username) || emty ($pwd) ||emty ($pwdrepeat)) {
+function emtyImputSignup($name, $email, $username, $pwd, $pwdrepeat){
+    //$result;
+    if (empty($name) || empty ($email) || empty ($username) || empty ($pwd) ||empty ($pwdrepeat)) {
         $result = true;
     }else{
         $result = false;
@@ -11,7 +11,7 @@ function emtyImputSignup($name, $email, $username, $pwd, $pwdrepeat) {
 }
 
 function invalidUid($username) {
-    $result;
+    //$result;
     if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
         $result = true;
     }else{
@@ -21,7 +21,7 @@ function invalidUid($username) {
 }
 
 function invalidEmail($email) {
-    $result;
+    //$result;
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $result = true;
     }else{
@@ -31,7 +31,7 @@ function invalidEmail($email) {
 }
 
 function pwdMatch($pwd, $pwdrepeat) {
-    $result;
+    //$result;
     if ($pwd !== $pwdrepeat) {
         $result = true;
     }else{
@@ -41,9 +41,9 @@ function pwdMatch($pwd, $pwdrepeat) {
 }
 
 function uidExists($conn, $username, $email) {
-    $sql = "SELECT  * FROM users WHERE userUid = ? OR usersEmail = ?;";
+    $sql = "SELECT * FROM users WHERE usersUid = ? OR usersEmail = ?;";
     $stmt = mysqli_stmt_init($conn);
-    if(mysqli_stmt_prepare($stmt, $sql)){
+    if(!mysqli_stmt_prepare($stmt, $sql)){
         header("location: ../signup.php?error=stmtfailed");
         exit();
     }
@@ -59,14 +59,13 @@ function uidExists($conn, $username, $email) {
         return $result;
     }
 
-
     mysqli_stmt_close($stmt);
 }
 
 function createUser($conn, $name, $email, $username, $pwd) {
     $sql = "INSERT INTO users (usersName, usersEmail, usersUid, usersPwd) VALUES (?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
-    if(mysqli_stmt_prepare($stmt, $sql)){
+    if(!mysqli_stmt_prepare($stmt, $sql)){
         header("location: ../signup.php?error=stmtfailed");
         exit();
     }
