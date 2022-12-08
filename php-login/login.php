@@ -15,9 +15,12 @@ include_once 'header.php';
             if ($_GET["error"] == "emptyinput") {
                 echo "<p>Fill inputs</p>";
             }
-            else if ($_GET["error"] == "wronglogin"){
+            elseif ($_GET["error"] == "wronglogin"){
                 echo "<p>Incorrect login info</p>";
-            }       
+            }
+            elseif ($_GET["error"] == "wrongpassword"){
+                echo "<p>Incorrect password</p>";
+            }    
         }
     ?>
 </section>
