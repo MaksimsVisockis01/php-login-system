@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -11,6 +14,14 @@
 <body>
     <div class="topnav">
       <a href="index.php">Home</a>
-      <a href="signup.php">Sign Up</a>
-      <a href="login.php">Login</a>
+      <?php
+        if (isset($_SESSION["useruid"])) {
+          echo "<a href='profile.php'>Profile page</a>";
+          echo "<a href='logout.php'>Log out</a>";
+        }
+        else{
+          echo "<a href='signup.php'>Sign Up</a>";
+          echo "<a href='login.php'>Login</a>";
+        }
+      ?>
     </div>
