@@ -18,10 +18,12 @@
         if (isset($_SESSION["useruid"])) {
           echo "<a href='profile.php'>Profile page</a>";
           echo "<a href='logout.php'>Log out</a>";
+          echo " <a href='addtext.php'>Add text</a>";
         }
         else{
           echo "<a href='signup.php'>Sign Up</a>";
           echo "<a href='login.php'>Login</a>";
         }
       ?>
+
     </div>
