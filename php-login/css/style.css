@@ -34,20 +34,24 @@ h2{
   flex-direction: column;
   flex-wrap: wrap;
   text-align: center;
-  
 }
 .login-form-form{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     text-align: center;
-    
-  }
+    }
 
-  .text-form-form{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    text-align: center;
-    
-  }
+.text-form-form{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.comment-form-form{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+}
