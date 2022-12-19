@@ -20,6 +20,7 @@
   <div class="collapse navbar-collapse" id="navbar-collapse-01">
     <ul class="nav navbar-nav">   
       <li><a href="index.php">Home</a></li>
+      <li><a href="comment.php">Comments</a></li>
     </ul>
       <?php        
         if (isset($_SESSION["useruid"])) {

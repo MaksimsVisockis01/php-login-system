@@ -19,10 +19,10 @@ include_once 'header.php';
                 echo "<script>alert('Fill inputs')</script>";
             }
             elseif ($_GET["error"] == "wronglogin"){
-                echo "<p>Incorrect login info</p>";
+                echo "<script>alert('Incorrect login info')</script>";
             }
             elseif ($_GET["error"] == "wrongpassword"){
-                echo "<p>Incorrect password</p>";
+                echo "<script>alert('Incorrect password')</script>";
             }    
         }
     ?>
