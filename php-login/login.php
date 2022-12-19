@@ -1,19 +1,22 @@
 <?php
 include_once 'header.php';
 ?>
-<section class="login-form">
-    <h2>login</h2>
-    <div class="login-form-form">
-        <form action="includes/login.inc.php" method="post">
-            <input type="text" name="uid" placeholder="username/email...">
-            <input type="password" name="pwd" placeholder="password...">
-            <button type="submit" name="submit">Login</button>
+    <section class="login-form">
+         <form action="includes/login.inc.php" method="POST">
+            <div class="container">
+                <h1>Login</h1>
+                <p>Please fill in this form to login.</p>
+                
+                <input type="text" name="uid" placeholder="Enter Username" required>
+                <input type="password" name="pwd" placeholder="Enter Password" required>
+                <button type="submit" name="submit">Login</button>
+            </div>
         </form>
-    </div>
+
     <?php
         if (isset($_GET["error"])) {
             if ($_GET["error"] == "emptyinput") {
-                echo "<p>Fill inputs</p>";
+                echo "<script>alert('Fill inputs')</script>";
             }
             elseif ($_GET["error"] == "wronglogin"){
                 echo "<p>Incorrect login info</p>";
