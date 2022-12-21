@@ -1,5 +1,10 @@
 <?php
     session_start();
-    unset($_SESSION["useruid"]);
+    if (isset($_SESSION["useruid"])) {
+        unset($_SESSION["useruid"]);
+    }
+    else{
+        unset($_SESSION["aldomgiinnN"]);
+    }
     header("location:index.php");
 ?>

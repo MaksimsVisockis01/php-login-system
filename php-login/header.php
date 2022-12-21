@@ -30,6 +30,14 @@
           echo "</ul>";
           echo "</div>";
         }
+        if((isset($_SESSION["adminN"]))){
+          echo "<li><a href='admintext.php'>Comments</a></li>";
+          echo "<div class='collapse navbar-collapse' id='navbar-collapse-01'> ";
+          echo "<ul class='nav navbar-nav navbar-right'>";
+          echo "<li><a href='logout.php'>Log out</a></li>";
+          echo "</ul>";
+          echo "</div>";
+        }
         else{
           echo "<div class='collapse navbar-collapse' id='navbar-collapse-01'>    ";
           echo "<ul class='nav navbar-nav navbar-right'>";
