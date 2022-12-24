@@ -4,7 +4,7 @@
         unset($_SESSION["useruid"]);
     }
     else{
-        unset($_SESSION["aldomgiinnN"]);
+        unset($_SESSION["adminN"]);
     }
     header("location:index.php");
 ?>

@@ -174,39 +174,7 @@ function createComment($conn, $username, $comment) {
 
 
 
-function emtpyInputaldomgiinn($username, $pwd){
-    //$result;
-    if (empty ($username) || empty ($pwd)) {
-        $result = true;
-    }else{
-        $result = false;
-    }
-    return $result;
-}
-function loginaldomgiinn($conn, $username, $pwd){
-    $uidExists = uidExists($conn, $username, $username);
 
-    if ($uidExists === false) {
-        header("location: ../aldomgiinn.php?error=wronglogin");
-        exit();
-    }
-
-    $pwdHashed = $uidExists["aldomgiinnP"];
-    $checkPwd = password_verify($pwd, $pwdHashed);
-
-    if ($checkPwd === false) {
-        header("location: ../aldomgiinn.php?error=wrongpassword");
-        exit();
-    }
-    elseif($checkPwd === true){
-        session_start();
-        $_SESSION["adminId"] = $uidExists["aldomgiinnId"];
-        $_SESSION["adminN"] = $uidExists["aldomgiinnN"];
-        header("location: ../index.php");
-        exit();
-    }
-
-}
 
 
 

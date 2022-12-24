@@ -8,8 +8,8 @@ include_once 'header.php';
                 <h1>Admin</h1>
                 <p>Please fill in this form to login.</p>
                 
-                <input type="text" name="uid" placeholder="Enter Username" required>
-                <input type="password" name="pwd" placeholder="Enter Password" required>
+                <input type="text" name="uidA" placeholder="Enter Username" required>
+                <input type="password" name="pwdA" placeholder="Enter Password" required>
                 <button type="submit" name="submit">Login</button>
             </div>
         </form>
@@ -24,7 +24,13 @@ include_once 'header.php';
             }
             elseif ($_GET["error"] == "wrongpassword"){
                 echo "<script>alert('Incorrect password')</script>";
-            }    
+            }   
+            elseif ($_GET["error"] == "stmtfailed"){
+                echo "<script>alert('Somethink went wrong try again')</script>";
+            } 
+            elseif ($_GET["error"] == "none"){
+                echo "<script>alert('You have logined!')</script>";
+            }
         }
     ?>
 </section>

@@ -2,18 +2,18 @@
 
 if (isset($_POST["submit"])) {
 
-    $username = $_POST["uid"];
-    $pwd = $_POST["pwd"];
+    $usernameA = $_POST["uidA"];
+    $pwdA = $_POST["pwdA"];
 
     require_once 'dbh.inc.php';
-    require_once 'functions.inc.php';
+    require_once 'AdminFunctions.inc.php';
 
-    if(emtpyInputaldomgiinn($username, $pwd) !== false) {
+    if(emtpyInputaldomgiinn($usernameA, $pwdA) !== false) {
         header("location: ../aldomgiinn.php?error=emptyinput");
         exit();
     }
 
-    loginaldomgiinn($conn, $username, $pwd);
+    loginaldomgiinn($conn, $usernameA, $pwdA);
 }
 else{
     header("location: ../aldomgiinn.php");

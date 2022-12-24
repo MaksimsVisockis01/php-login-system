@@ -21,32 +21,37 @@
     <ul class="nav navbar-nav">   
       <li><a href="index.php">Home</a></li>
       <li><a href="comment.php">Comments</a></li>
-    </ul>
+      </ul>
       <?php        
         if (isset($_SESSION["useruid"])) {
-          echo "<div class='collapse navbar-collapse' id='navbar-collapse-01'> ";
-          echo "<ul class='nav navbar-nav navbar-right'>";
-          echo "<li><a href='logout.php'>Log out</a></li>";
-          echo "</ul>";
-          echo "</div>";
+          echo "<div class='collapse navbar-collapse' id='navbar-collapse-01'> 
+                  <ul class='nav navbar-nav navbar-right'>
+                    <li><a href='logout.php'>Log out</a></li>
+                  </ul>
+                </div>";
         }
         if((isset($_SESSION["adminN"]))){
-          echo "<li><a href='admintext.php'>Comments</a></li>";
-          echo "<div class='collapse navbar-collapse' id='navbar-collapse-01'> ";
-          echo "<ul class='nav navbar-nav navbar-right'>";
-          echo "<li><a href='logout.php'>Log out</a></li>";
-          echo "</ul>";
-          echo "</div>";
+          echo "
+              <ul class='nav navbar-nav'>
+                <li><a href='admintext.php'>Patch notes</a></li>
+              </ul>
+                  <div class='collapse navbar-collapse' id='navbar-collapse-01'> 
+                    <ul class='nav navbar-nav navbar-right'>
+                      <li><a href='logout.php'>Log out</a></li>
+                    </ul>
+                  </div>
+                  ";
         }
         else{
-          echo "<div class='collapse navbar-collapse' id='navbar-collapse-01'>    ";
-          echo "<ul class='nav navbar-nav navbar-right'>";
-          echo " <li><a href='signup.php'>Sign Up</a></li>";
-          echo "<li><a href='login.php'>Login</a></li>";
-          echo "</ul>";
-          echo "</div>";
+          echo "<div class='collapse navbar-collapse' id='navbar-collapse-01'>    
+                  <ul class='nav navbar-nav navbar-right'>
+                    <li><a href='signup.php'>Sign Up</a></li>
+                    <li><a href='login.php'>Login</a></li>
+                  </ul>
+                </div>";
         } 
       ?>
+
   </div>
 </nav>
 
