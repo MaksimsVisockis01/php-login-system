@@ -38,7 +38,7 @@ include 'includes/test.inc.php';
 			      <td><a href="update.php?id=<?=$rows['commentId']?>"
 				  		class="btn btn-success">Update</a>
 
-			      	  <a href="../includes/delete.inc.php?id=<?=$rows['commentId']?>"
+			      	  <a href="includes/delete.inc.php?id=<?=$rows['commentId']?>"
 			      	     class="btn btn-danger">Delete</a>
 			      </td>
 			    </tr>
