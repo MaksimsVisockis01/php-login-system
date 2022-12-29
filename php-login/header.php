@@ -21,6 +21,7 @@
     <ul class="nav navbar-nav">   
       <li><a href="index.php">Home</a></li>
       <li><a href="comment.php">Comments</a></li>
+      <li><a href="test.php">test</a></li>
       </ul>
       <?php        
         if (isset($_SESSION["useruid"])) {
@@ -30,7 +31,7 @@
                   </ul>
                 </div>";
         }
-        if((isset($_SESSION["adminN"]))){
+        else if(isset($_SESSION["adminN"])){
           echo "
               <ul class='nav navbar-nav'>
                 <li><a href='admintext.php'>Patch notes</a></li>

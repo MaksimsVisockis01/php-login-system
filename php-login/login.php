@@ -2,16 +2,16 @@
 include_once 'header.php';
 ?>
     <section class="login-form">
-         <form action="includes/login.inc.php" method="POST">
-            <div class="container">
+        <div class="container">
+            <form action="includes/login.inc.php" method="POST">
                 <h1>Login</h1>
                 <p>Please fill in this form to login.</p>
                 
                 <input type="text" name="uid" placeholder="Enter Username" required>
                 <input type="password" name="pwd" placeholder="Enter Password" required>
                 <button type="submit" name="submit">Login</button>
-            </div>
-        </form>
+            </form>
+        </div>
 
     <?php
         if (isset($_GET["error"])) {
