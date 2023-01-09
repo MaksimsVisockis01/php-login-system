@@ -62,6 +62,9 @@ function uidExists($conn, $username, $email) {
     mysqli_stmt_close($stmt);
 }
 
+
+
+
 function createUser($conn, $name, $email, $username, $pwd) {
     $sql = "INSERT INTO users (usersName, usersEmail, usersUid, usersPwd) VALUES (?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);

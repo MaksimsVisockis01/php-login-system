@@ -14,3 +14,5 @@ if(isset($_GET['commentId'])) {
 }else {
    header("Location: ../test.php?error=smth gone wrong");
 }
+
+

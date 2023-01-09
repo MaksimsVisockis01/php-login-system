@@ -6,12 +6,12 @@ include_once 'header.php';
 
 <?php
 if (isset($_SESSION["useruid"])) {
-    echo"<form action='includes/comment.inc.php' method='post'>";
-    echo"<h1>Add comment</h1>";
-    echo"<p>Please fill in this form to create a comment.</p>";
-    echo"<input type='text' name='comment' placeholder='your comment...'>";
-    echo"<button type='submit' name='submit'>Add comment</button>";
-    echo"</form>";
+    echo"<form action='includes/comment.inc.php' method='post'>
+    <h1>Add comment</h1>
+    <p>Please fill in this form to create a comment.</p>
+    <input type='text' name='comment' placeholder='your comment...'>
+    <button type='submit' name='submit'>Add comment</button>
+    </form>";
 }
 else if (isset($_SESSION["adminN"])) {
     echo"<form action='includes/comment.inc.php' method='post'>";

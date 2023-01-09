@@ -5,54 +5,58 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <title>Php login</title>
+    <title>Project</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="css/reset.css"> -->
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style_header.css">
+    
+    
 </head>
 <body>
+  
+  <header class="header-main">
+      <div class="header-main-logo">
+        <img src="img/Rvt_8bit_logo.png" alt="LogoRVT">
+      </div>
+      <div class='hamburger'>
+            <div class='line'></div>
+            <div class='line'></div>
+            <div class='line'></div>
+      </div>
+        <nav class="header-main-nav">
+          <ul>
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="comment.php">COMMENTS</a></li>
+            
+            <?php
+            if (isset($_SESSION["useruid"])) {
+              echo "
+            <li><a href='logout.php'>LOG OUT</a></li>
+          </ul>
+      </nav>";
+            } else if (isset($_SESSION["adminN"])) {
+              echo "
+            <li><a href='test.php'>TEST</a></li>
+            <li><a href='patchnotes.php'>PATCH NOTES</a></li>
+            <li><a href='logout.php'>LOG OUT</a></li>
+          </ul>
+      </nav>
+              ";
 
-
-
-<nav class="navbar navbar-default" role="navigation">
-  <div class="collapse navbar-collapse" id="navbar-collapse-01">
-    <ul class="nav navbar-nav">   
-      <li><a href="index.php">Home</a></li>
-      <li><a href="comment.php">Comments</a></li>
-      <li><a href="test.php">test</a></li>
-      </ul>
-      <?php        
-        if (isset($_SESSION["useruid"])) {
-          echo "<div class='collapse navbar-collapse' id='navbar-collapse-01'> 
-                  <ul class='nav navbar-nav navbar-right'>
-                    <li><a href='logout.php'>Log out</a></li>
-                  </ul>
-                </div>";
-        }
-        else if(isset($_SESSION["adminN"])){
-          echo "
-              <ul class='nav navbar-nav'>
-                <li><a href='admintext.php'>Patch notes</a></li>
-              </ul>
-                  <div class='collapse navbar-collapse' id='navbar-collapse-01'> 
-                    <ul class='nav navbar-nav navbar-right'>
-                      <li><a href='logout.php'>Log out</a></li>
-                    </ul>
-                  </div>
-                  ";
-        }
-        else{
-          echo "<div class='collapse navbar-collapse' id='navbar-collapse-01'>    
-                  <ul class='nav navbar-nav navbar-right'>
-                    <li><a href='signup.php'>Sign Up</a></li>
-                    <li><a href='login.php'>Login</a></li>
-                  </ul>
-                </div>";
-        } 
+              
+            } else{
+              echo "
+          
+            <li><a href='signup.php'>SIGN UP</a></li>
+            <li><a href='login.php'>LOGIN</a></li>
+          </ul>
+      </nav>";
+            }
+            
+          
       ?>
-
-  </div>
-</nav>
+  </header>
+  <script src="js/header_js.js"></script>
 
