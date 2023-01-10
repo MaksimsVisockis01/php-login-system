@@ -49,7 +49,6 @@
             } else{
               echo "
           
-            <li><a href='signup.php'>SIGN UP</a></li>
             <li><a href='login.php'>LOGIN</a></li>
           </ul>
       </nav>";

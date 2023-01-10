@@ -1,18 +1,37 @@
-<?php
-include_once 'header.php';
-?>
-
-<section class="admin-form">
-         <form action="includes/aldomgiinn.inc.php" method="POST">
-            <div class="container">
-                <h1>Admin</h1>
-                <p>Please fill in this form to login.</p>
-                
-                <input type="text" name="uidA" placeholder="Enter Username" required>
-                <input type="password" name="pwdA" placeholder="Enter Password" required>
-                <button type="submit" name="submit">Login</button>
-            </div>
-        </form>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Project</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/login.css">
+    <!-- <link rel="stylesheet" href="css/reset.css"> -->
+</head>
+<body>
+    <section class="login-form">
+        <div class="center">
+            <h1>Login</h1>
+            <form action="includes/aldomgiinn.inc.php" method="POST">
+                <div class="txt_field">
+                    <input type="text" name="uidA" required>
+                    <span></span>
+                    <label>Username</label>
+                </div>
+                <div class="txt_field">
+                <input type="password" name="pwdA" required>
+                    <span></span>
+                    <label>Password</label>
+                </div>
+                <button onclick="Sign()" id="loginButton" type="submit" name="submit">Login</button>
+            </form>
+                <div class="signup_link">
+                  Not a member? <a href="signup.php">Signup</a>
+                </div>  
+                <div class="home_link">
+                  <a href="index.php">Home</a>
+                </div>
+        </div>
 
     <?php
         if (isset($_GET["error"])) {

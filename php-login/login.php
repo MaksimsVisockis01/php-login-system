@@ -5,11 +5,10 @@
     <title>Project</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/login.css">
+    <!-- <link rel="stylesheet" href="css/reset.css"> -->
 </head>
 <body>
-
     <section class="login-form">
         <div class="center">
             <h1>Login</h1>
@@ -24,11 +23,14 @@
                     <span></span>
                     <label>Password</label>
                 </div>
-                <button onclick="Sign()" id="signupButton" type="submit" name="submit">Login</button>
+                <button onclick="Sign()" id="loginButton" type="submit" name="submit">Login</button>
             </form>
                 <div class="signup_link">
                   Not a member? <a href="signup.php">Signup</a>
                 </div>  
+                <div class="home_link">
+                  <a href="index.php">Home</a>
+                </div>
         </div>
 
     <?php
@@ -45,3 +47,5 @@
         }
     ?>
 </section>
+    </body>
+    </html>
