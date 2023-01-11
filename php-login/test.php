@@ -8,7 +8,7 @@ include 'includes/test.inc.php';
 <?php
             if (isset($_SESSION["adminN"])) {
               echo "
-            <<body>
+            <body>
 			<div class='container'>
 				<div class='box'>
 					<h4 class='display-4 text-center'>Comments</h4><br>

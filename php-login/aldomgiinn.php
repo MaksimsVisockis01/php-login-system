@@ -25,9 +25,6 @@
                 </div>
                 <button onclick="Sign()" id="loginButton" type="submit" name="submit">Login</button>
             </form>
-                <div class="signup_link">
-                  Not a member? <a href="signup.php">Signup</a>
-                </div>  
                 <div class="home_link">
                   <a href="index.php">Home</a>
                 </div>
