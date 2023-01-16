@@ -1,12 +1,12 @@
 <?php
 include_once 'header.php';
-include 'includes/update.inc.php';
+include 'includes/updatePC.inc.php';
 ?>
 
 </head>
 <body>
 	<div class="container">
-		<form action="includes/update.inc.php" 
+		<form action="includes/updatePC.inc.php" 
 		      method="post">
             
 		   <h4 class="display-4 text-center">Update</h4><hr><br>
@@ -16,16 +16,30 @@ include 'includes/update.inc.php';
 		    </div>
 		   <?php } ?>
 		   <div class="form-group">
-		     <label for="comment">Comment</label>
-		     <input type="Comment" 
+		     <label for="PCname">Name of patchnote</label>
+		     <input type="text" 
+		           class="form-control" 
+		           id="PCname" 
+		           name="PCname" 
+		           value='<?=$row["PCname"] ?>' >
+
+             <label for="Version">Version</label>
+		     <input type="text" 
+		           class="form-control" 
+		           id="Version" 
+		           name="Version" 
+		           value='<?=$row["Version"] ?>' >
+
+             <label for="comment">Comment</label>
+		     <input type="text" 
 		           class="form-control" 
 		           id="comment" 
 		           name="comment" 
 		           value='<?=$row["comment"] ?>' >
 		   </div>
 		   <input type="text" 
-		          name="commentId"
-		          value='<?=$row["commentId"]?>'
+		          name="pcId"
+		          value='<?=$row["pcId"]?>'
 		          hidden >
 		   <button type="submit" 
 		           class="btn btn-primary"

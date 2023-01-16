@@ -172,6 +172,42 @@ function createComment($conn, $username, $comment) {
     exit();
 }
 
+
+function emtyInputPCname($PCname){
+    //$result;
+    if (empty ($PCname)) {
+        $result = true;
+    }else{
+        $result = false;
+    }
+    return $result;
+}
+function emtyInputVersion($Version){
+    //$result;
+    if (empty ($Version)) {
+        $result = true;
+    }else{
+        $result = false;
+    }
+    return $result;
+}
+
+function createPatchnote($conn, $username, $PCname, $Version, $comment) {
+    $sql = "INSERT INTO patchnotes (usersUid, PCname, Version, comment) VALUES (?, ?, ?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../addtext.php?error=stmtfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "ssss",  $username, $PCname, $Version, $comment);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location: ../patchnotes.php?error=none");
+    exit();
+}
+
 //----------
 
 
