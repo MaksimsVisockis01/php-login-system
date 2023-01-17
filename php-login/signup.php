@@ -12,7 +12,7 @@
         <section class="signup-form">
         <div class="center">
             <h1>Sign up</h1>
-            <form action="iincludes/signup.inc.php" method="POST">
+            <form action="includes/signup.inc.php" method="POST">
                 <div class="txt_field">
                     <input type="text" name="name" required>
                     <span></span>

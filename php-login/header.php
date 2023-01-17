@@ -39,7 +39,6 @@
             } else if (isset($_SESSION["adminN"])) {
               echo "
             <li><a href='test.php'>TEST</a></li>
-            <li><a href='patchnotes.php'>PATCH NOTES</a></li>
             <li><a href='logout.php'>LOG OUT</a></li>
           </ul>
       </nav>
@@ -48,7 +47,7 @@
               
             } else{
               echo "
-          
+            <li><a href='patchnotes.php'>PATCH NOTES</a></li>
             <li><a href='login.php'>LOGIN</a></li>
           </ul>
       </nav>";

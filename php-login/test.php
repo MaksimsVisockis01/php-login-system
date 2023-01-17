@@ -33,6 +33,7 @@ include 'includes/test.inc.php';
 							<a href="includes/delete.inc.php?commentId=<?php echo $row["commentId"]; ?>" class="btn btn-danger">Delete</a>				
 						</td>
 						</tr>
+						
 						<?php
 						$i++;
 						}

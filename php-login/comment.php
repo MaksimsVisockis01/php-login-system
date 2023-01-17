@@ -60,8 +60,19 @@ if (isset($_GET["error"])) {
             <div class='comment__container opened' id='first-comment'>";
         echo"<div class='comment__card'>";
         echo "<h3 class='comment__title'>" . $row["usersUid"] . "</h3>";
-        echo "<p>"  . $row["comment"] .  "</p>";
-        echo "</div>
+        echo "<p>"  . $row["comment"] .  "</p>";?>
+        <?php if (isset($_SESSION["useruid"]) == true) { ?>
+        <?php if ($_SESSION["useruid"] == $row["usersUid"]) { ?>
+            <a href="update.php?commentId=<?php echo $row["commentId"]; ?>" class="btn btn-success">Update</a>
+            <a href="includes/delete.inc.php?commentId=<?php echo $row["commentId"]; ?>" class="btn btn-danger">Delete</a>				
+        <?php }
+        } else if (isset($_SESSION["adminN"]) == true) {
+            if ($_SESSION["adminN"] == $row["usersUid"]) { ?>
+            <a href="update.php?commentId=<?php echo $row["commentId"]; ?>" class="btn btn-success">Update</a>
+            <a href="includes/delete.inc.php?commentId=<?php echo $row["commentId"]; ?>" class="btn btn-danger">Delete</a>				
+        <?php }
+        }?>
+        <?php echo "</div>
         </div>
         </div>";
 } 

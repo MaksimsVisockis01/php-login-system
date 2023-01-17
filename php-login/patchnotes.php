@@ -17,9 +17,7 @@ include_once 'header.php';
                 </form>
                 ";
 
-            } else{
-                header("location:index.php");
-              }
+            }
               
 ?>
 
@@ -54,10 +52,10 @@ if (isset($_GET["error"])) {
         <?php echo "<p>"  . $row["Version"] .  "</p>";?>
         <?php echo "<p>"  . $row["comment"] .  "</p>";?>
         
-
-        <a href="updatePC.php?pcId=<?php echo $row["pcId"]; ?>" class="btn btn-success">Update</a>
-		<a href="includes/deletePC.inc.php?pcId=<?php echo $row["pcId"]; ?>" class="btn btn-danger">Delete</a>				
-
+        <?php if (isset($_SESSION["adminN"])) { ?>
+        <a href="updatePC.php?pcId=<?php echo $row["pcId"]; ?>">Update</a>
+		<a href="includes/deletePC.inc.php?pcId=<?php echo $row["pcId"]; ?>">Delete</a>				
+        <?php } ?>
         
         <?php echo "</div>
         </div>
