@@ -208,6 +208,36 @@ function createPatchnote($conn, $username, $PCname, $Version, $comment) {
     exit();
 }
 
+
+
+
+
+
+function emtyInputForum($title, $text){
+    //$result;
+    if (empty ($title) || empty ($text)) {
+        $result = true;
+    }else{
+        $result = false;
+    }
+    return $result;
+}
+
+function createForum($conn, $username, $title, $text) {
+    $sql = "INSERT INTO forumlist (useruid, title, text) VALUES (?, ?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../addtext.php?error=stmtfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "sss", $username,  $title, $text);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location: ../forumlist.php?error=none");
+    exit();
+}
 //----------
 
 

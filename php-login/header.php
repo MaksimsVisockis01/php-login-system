@@ -29,6 +29,8 @@
           <ul>
             <li><a href="index.php">HOME</a></li>
             <li><a href="comment.php">COMMENTS</a></li>
+            <li><a href='patchnotes.php'>PATCH NOTES</a></li>
+            <li><a href='forumlist.php'>FORUM</a></li>
             
             <?php
             if (isset($_SESSION["useruid"])) {
@@ -43,11 +45,8 @@
           </ul>
       </nav>
               ";
-
-              
             } else{
               echo "
-            <li><a href='patchnotes.php'>PATCH NOTES</a></li>
             <li><a href='login.php'>LOGIN</a></li>
           </ul>
       </nav>";
