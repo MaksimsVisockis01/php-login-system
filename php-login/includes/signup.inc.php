@@ -27,6 +27,22 @@ if (isset($_POST["submit"])) {
         header("location: ../signup.php?error=passwordsdontmatch");
         exit();
     }
+    if (strlen($pwd) < 8) {
+        header("location: ../signup.php?error=passwordtooshort");
+        exit();
+    }
+    if (!preg_match("#[0-9]+#", $pwd)) {
+        header("location: ../signup.php?error=onenumber");
+        exit();
+    }
+    if (!preg_match("#[a-zA-Z]+#", $pwd)) {
+        header("location: ../signup.php?error=oneletter");
+        exit();
+    } 
+    if (!preg_match("/[\'^£$%&*()}{@#~?><>,|=_+!-]/", $pwd)) {
+        header("location: ../signup.php?error=onesymb");
+        exit();
+    }    
     if(uidExists($conn, $username, $email) !== false) {
         header("location: ../signup.php?error=usernametaken");
         exit();

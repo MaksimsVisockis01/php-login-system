@@ -44,6 +44,9 @@
             elseif ($_GET["error"] == "wrongpassword"){
                 echo "<script>alert('Incorrect password')</script>";
             }    
+            elseif ($_GET["error"] == "none"){
+                echo "<script>alert('You have signed up! Now you need to login')</script>";
+            }
         }
     ?>
 </section>

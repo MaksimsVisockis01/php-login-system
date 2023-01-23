@@ -70,9 +70,19 @@
             elseif ($_GET["error"] == "usernametaken"){
                 echo "<script>alert('Username already taken')</script>";
             }
-            elseif ($_GET["error"] == "none"){
-                echo "<script>alert('You have signed up!')</script>";
+            elseif ($_GET["error"] == "passwordtooshort"){
+                echo "<script>alert('Password too short!')</script>";
             }
+            elseif ($_GET["error"] == "onenumber"){
+                echo "<script>alert('Password must include at least one number!')</script>";
+            }
+            elseif ($_GET["error"] == "oneletter"){
+                echo "<script>alert('Password must include at least one letter!')</script>";
+            }
+            elseif ($_GET["error"] == "onesymb"){
+                echo "<script>alert('Password must include at least one symbol!')</script>";
+            }
+            
                     
         }
 
