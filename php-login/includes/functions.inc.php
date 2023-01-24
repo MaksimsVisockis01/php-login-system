@@ -238,6 +238,25 @@ function createForum($conn, $username, $title, $text) {
     header("location: ../forumlist.php?error=none");
     exit();
 }
+
+function createFComment($conn, $username, $comment, $id) {
+    $sql = "INSERT INTO `forumscomments` (`useruid`, `comment`, `forumId`) VALUES (?, ?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../addtext.php?error=stmtfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "sss", $username, $comment, $id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location: ../forum.php?error=none");
+    exit();
+}
+
+
 //----------
 
 
