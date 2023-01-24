@@ -6,6 +6,7 @@ include_once 'header.php';
     <div class='container'>
 
 <?php
+
 if (isset($_SESSION["useruid"])) {
     echo"<form action='includes/forumlist.inc.php' method='post'>
     <h1>Add you question</h1>

@@ -44,10 +44,7 @@ if (isset($_GET["error"])) {
 </section>
 
 
-    <section>
-    
-        
-            
+    <section>     
     <?php
     require_once 'includes/dbh.inc.php';
     require_once 'includes/functions.inc.php';

@@ -1,40 +1,42 @@
 <?php 
 
-
-
 if (isset($_GET['forumId'])) {
+    
     include "dbh.inc.php";
-    function validate($data){
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-	}
-
-    $id = validate($_GET['forumId']);
+    
+    $id = $_GET['forumId'];
 	$sql = "SELECT * FROM forumlist WHERE `forumId` ='$id'";
     $result = mysqli_query($conn, $sql);
+    
+    if (mysqli_num_rows($result) > 0) {
+    	$row = mysqli_fetch_assoc($result);
+    }else {
+        
+    	header("Location: forum.php");
+    }
 
+    $sql = "SELECT * FROM forumlist WHERE `forumId` ='$id'";
+    $result = mysqli_query($conn, $sql);
+
+
+    $sql1 = "SELECT * FROM forumscomments WHERE `forumId` ='$id'";
+    $result1 = mysqli_query($conn, $sql1);
 
 
 
 }else if (isset($_POST["submit"])) {
+    
     session_start();
     include "dbh.inc.php";
-    function validate($data){
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-	}
-    $comment = validate($_POST['comment']);
-    $id = validate($_POST['forumId']);
-
+    
+    $comment = $_POST['comment'];
+    $id = $_POST['forumId'];
+    
     if (isset($_SESSION["useruid"])) {
         $username = $_SESSION['useruid'];
-
         include 'dbh.inc.php';
         include 'functions.inc.php';
+        
         
         if(emtyInputComment($comment) !== false) {
             header("location: ../forum.php?error=emptyinput");
@@ -54,10 +56,10 @@ if (isset($_GET['forumId'])) {
             exit();
         }
     
-        createFComment($conn, $username, $comment);
+        createFComment($conn, $username, $comment, $id);
     }
 
 }else{
-    header("location: ../forum.php");
+    header("location: forumlist.php");
     exit();
 }
