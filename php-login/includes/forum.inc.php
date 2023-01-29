@@ -15,12 +15,14 @@ if (isset($_GET['forumId'])) {
     	header("Location: forum.php");
     }
 
-    $sql = "SELECT * FROM forumlist WHERE `forumId` ='$id'";
-    $result = mysqli_query($conn, $sql);
+    
 
 
     $sql1 = "SELECT * FROM forumscomments WHERE `forumId` ='$id'";
     $result1 = mysqli_query($conn, $sql1);
+
+    $sql2 = "SELECT * FROM forumlist WHERE `forumId` ='$id'";
+    $result2 = mysqli_query($conn, $sql2);
 
 
 

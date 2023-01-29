@@ -35,7 +35,8 @@
             <?php
             if (isset($_SESSION["useruid"])) {
               echo "
-            <li><a href='logout.php'>LOG OUT</a></li>
+              <li><a href='profile.php'>PROFILE</a></li>
+              <li><a href='logout.php'>LOG OUT</a></li>
           </ul>
       </nav>";
             } else if (isset($_SESSION["adminN"])) {
