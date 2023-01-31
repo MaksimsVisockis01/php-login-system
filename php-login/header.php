@@ -28,7 +28,7 @@
         <nav class="header-main-nav">
           <ul>
             <li><a href="index.php">HOME</a></li>
-            <li><a href="comment.php">COMMENTS</a></li>
+            <!-- <li><a href="comment.php">COMMENTS</a></li> -->
             <li><a href='patchnotes.php'>PATCH NOTES</a></li>
             <li><a href='forumlist.php'>FORUM</a></li>
             
