@@ -5,25 +5,16 @@ if (isset($_GET['forumId'])) {
     include "dbh.inc.php";
     
     $id = $_GET['forumId'];
+
 	$sql = "SELECT * FROM forumlist WHERE `forumId` ='$id'";
     $result = mysqli_query($conn, $sql);
-    
     if (mysqli_num_rows($result) > 0) {
     	$row = mysqli_fetch_assoc($result);
     }else {
-        
     	header("Location: forum.php");
     }
-
-    
-
-
-    $sql1 = "SELECT * FROM forumscomments WHERE `forumId` ='$id'";
-    $result1 = mysqli_query($conn, $sql1);
-
-    $sql2 = "SELECT * FROM forumlist WHERE `forumId` ='$id'";
-    $result2 = mysqli_query($conn, $sql2);
-
+    $sql2 = "SELECT * FROM forumscomments WHERE `forumId` ='$id'";
+    $result2= mysqli_query($conn, $sql2);
 
 
 }else if (isset($_POST["submit"])) {

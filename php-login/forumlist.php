@@ -68,8 +68,19 @@ if (isset($_GET["error"])) {
         echo"<div class='comment__card'>";
         echo "<h3 class='comment__title'>" . $row["useruid"] . "</h3>";?>
         <a href="forum.php?forumId=<?php echo $row["forumId"]; ?>" class="btn btn-success"><?php echo $row["title"]; ?></a>
-        <?php echo "<p>"  . $row["text"] .  "</p>";
-        echo "</div>
+        <?php echo "<p>"  . $row["text"] .  "</p>"; ?>
+        <?php if (isset($_SESSION["useruid"]) == true) { ?>
+        <?php if ($_SESSION["useruid"] == $row["useruid"]) { ?>
+            <a href="updateFList.php?forumId=<?php echo $row["forumId"]; ?>" class="btn btn-success">Update</a>
+            <a href="includes/deleteFList.inc.php?forumId=<?php echo $row["forumId"]; ?>" class="btn btn-danger">Delete</a>				
+        <?php }
+        } else if (isset($_SESSION["adminN"]) == true) {
+            if ($_SESSION["adminN"] == $row["useruid"]) { ?>
+            <a href="updateFList.php?forumId=<?php echo $row["forumId"]; ?>" class="btn btn-success">Update</a>
+            <a href="includes/deleteFList.inc.php?forumId=<?php echo $row["forumId"]; ?>" class="btn btn-danger">Delete</a>				
+        <?php }
+        }?>
+        <?php echo "</div>
         </div>
         </div>";
 } 

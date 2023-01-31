@@ -2,33 +2,6 @@
 include_once 'header.php';
 include 'includes/forum.inc.php';
 ?>
-
-<section>        
-<?php
-    require_once 'includes/dbh.inc.php';
-    require_once 'includes/functions.inc.php';
-    require_once 'includes/forum.inc.php';
-
-    while($row = mysqli_fetch_array($result2)) {
-        echo"";
-        echo "
-            <div class='container'>
-            <div class='comment__container opened' id='first-comment'>";
-        echo"<div class='comment__card'>";
-        echo "<h3 class='comment__title'>" . $row["useruid"] . "</h3>";
-        echo "<h3 class='comment__title'>" . $row["title"] . "</h3>";
-         echo "<p>"  . $row["text"] .  "</p>";
-        echo "</div>
-        </div>
-        </div>";
-} 
-//$result->free();
-//$conn->close();
-?> 
-            
-    </section>
-
-
 <link rel="stylesheet" href="css/comment.css">
 
     <section class='comment-form'>
@@ -90,20 +63,31 @@ if (isset($_GET["error"])) {
     require_once 'includes/functions.inc.php';
     require_once 'includes/forum.inc.php';
 
-    while($row = mysqli_fetch_array($result1)) {
+    while($row = mysqli_fetch_array($result2)) {
         echo"";
         echo "
             <div class='container'>
             <div class='comment__container opened' id='first-comment'>";
         echo"<div class='comment__card'>";
         echo "<h3 class='comment__title'>" . $row["useruid"] . "</h3>";
-        echo "<h3 class='comment__title'>" . $row["comment"] . "</h3>";
+        echo "<h3 class='comment__title'>" . $row["comment"] . "</h3>";?>
+        <?php if (isset($_SESSION["useruid"]) == true) { ?>
+            <?php if ($_SESSION["useruid"] == $row["useruid"]) { ?>
+                <a href="updateF.php?FcommentId=<?php echo $row["FcommentId"]; ?>" class="btn btn-success">Update</a>
+                <a href="includes/deleteF.inc.php?FcommentId=<?php echo $row["FcommentId"]; ?>" class="btn btn-danger">Delete</a>				
+            <?php }
+            } else if (isset($_SESSION["adminN"]) == true) {
+                if ($_SESSION["adminN"] == $row["useruid"]) { ?>
+                <a href="updateF.php?FcommentId=<?php echo $row["FcommentId"]; ?>" class="btn btn-success">Update</a>
+                <a href="includes/deleteF.inc.php?FcommentId=<?php echo $row["FcommentId"]; ?>" class="btn btn-danger">Delete</a>				
+            <?php }
+            }
         echo "</div>
         </div>
         </div>";
 } 
-//$result->free();
-//$conn->close();
+$result2->free();
+$conn->close();
 ?> 
             
     </section>
