@@ -7,7 +7,7 @@ include_once 'header.php';
     src="https://www.youtube-nocookie.com/embed/02G3GUt6Nzo?rel=0&showinfo=0"   frameborder="0" ></iframe>
     </div>
     <div class="download_button" >
-    <button class="btn"><i class="fa fa-download"></i><a href="https://kdmk-studios.itch.io/rvt-adventure/devlog/480712/version-1060"> Download </a></button>
+    <button class="btn"><i class="fa fa-download"></i><a href="https://kdmk-studios.itch.io/rvt-adventure"> Download </a></button>
     </div>
     <div id="contentWrapper">
         <div class="content">
