@@ -4,7 +4,7 @@ include_once 'includes/profile.inc.php';
 ?>
 
 
-
+<section> 
 <?php
 while($row = mysqli_fetch_array($result)) {
         echo"";

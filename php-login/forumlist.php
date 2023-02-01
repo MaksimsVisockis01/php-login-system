@@ -74,10 +74,10 @@ if (isset($_GET["error"])) {
             <a href="updateFList.php?forumId=<?php echo $row["forumId"]; ?>" class="btn btn-success">Update</a>
             <a href="includes/deleteFList.inc.php?forumId=<?php echo $row["forumId"]; ?>" class="btn btn-danger">Delete</a>				
         <?php }
-        } else if (isset($_SESSION["adminN"]) == true) {
-            if ($_SESSION["adminN"] == $row["useruid"]) { ?>
+        } else if (isset($_SESSION["adminN"]) == true) {?>
+            <a href="includes/deleteFList.inc.php?forumId=<?php echo $row["forumId"]; ?>" class="btn btn-danger">Delete</a>	
+            <?php if ($_SESSION["adminN"] == $row["useruid"]) { ?>
             <a href="updateFList.php?forumId=<?php echo $row["forumId"]; ?>" class="btn btn-success">Update</a>
-            <a href="includes/deleteFList.inc.php?forumId=<?php echo $row["forumId"]; ?>" class="btn btn-danger">Delete</a>				
         <?php }
         }?>
         <?php echo "</div>

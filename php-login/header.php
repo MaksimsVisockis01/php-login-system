@@ -41,7 +41,6 @@
       </nav>";
             } else if (isset($_SESSION["adminN"])) {
               echo "
-            <li><a href='test.php'>TEST</a></li>
             <li><a href='logout.php'>LOG OUT</a></li>
           </ul>
       </nav>

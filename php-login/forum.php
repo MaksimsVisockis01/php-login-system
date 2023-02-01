@@ -76,10 +76,11 @@ if (isset($_GET["error"])) {
                 <a href="updateF.php?FcommentId=<?php echo $row["FcommentId"]; ?>" class="btn btn-success">Update</a>
                 <a href="includes/deleteF.inc.php?FcommentId=<?php echo $row["FcommentId"]; ?>" class="btn btn-danger">Delete</a>				
             <?php }
-            } else if (isset($_SESSION["adminN"]) == true) {
-                if ($_SESSION["adminN"] == $row["useruid"]) { ?>
+            } else if (isset($_SESSION["adminN"]) == true) {?>
+                <a href="includes/deleteF.inc.php?FcommentId=<?php echo $row["FcommentId"]; ?>" class="btn btn-danger">Delete</a>
+                <?php if ($_SESSION["adminN"] == $row["useruid"]) { ?>
                 <a href="updateF.php?FcommentId=<?php echo $row["FcommentId"]; ?>" class="btn btn-success">Update</a>
-                <a href="includes/deleteF.inc.php?FcommentId=<?php echo $row["FcommentId"]; ?>" class="btn btn-danger">Delete</a>				
+                				
             <?php }
             }
         echo "</div>

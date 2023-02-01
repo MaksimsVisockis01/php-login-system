@@ -30,7 +30,7 @@ if (isset($_POST["submit"])) {
             exit();
         }
     
-        createComment($conn, $username, $comment);
+        createForum($conn, $username, $title, $text);
     }
 
 }else{
