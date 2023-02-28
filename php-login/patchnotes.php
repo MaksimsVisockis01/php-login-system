@@ -2,6 +2,7 @@
 include_once 'header.php';
 ?>
 <link rel="stylesheet" href="css/pc.css">
+<div class='double-background'>
 <section class='comment-form'>
     <div class='container'>
 <?php
@@ -44,13 +45,14 @@ if (isset($_GET["error"])) {
     while($row = mysqli_fetch_array($result)) {
         ?>
         
-            <div class='container'>
-            <div class='comment__container opened' id='first-comment'>
-            <?php echo"<div class='comment__card'>";?>
-        <?php echo "<h3 class='comment__title'>" . $row["PCname"] . "</h3>";?>
-        <?php echo "<p>"  . $row["usersUid"] .  "</p>";?>
-        <?php echo "<p>"  . $row["Version"] .  "</p>";?>
-        <?php echo "<p>"  . $row["comment"] .  "</p>";?>
+        <div class="containerNews">
+        <div class="row">
+            <div class="col-4">
+                <div class="outside ">
+        <?php echo "<p class='headdingtitleouter'>" . $row["PCname"] . "</p>";?>
+        <?php echo "<div class='recentnewstitleinner '>";?>
+        <?php echo "<div class='innerTitleRecentNews'>"  . $row["Version"] .  "</div>";?>
+        <?php echo "<div class='padding'>"  . $row["comment"] .  "</div>";?>
         
         <?php if (isset($_SESSION["adminN"])) { ?>
         <a href="updatePC.php?pcId=<?php echo $row["pcId"]; ?>">Update</a>
@@ -58,14 +60,30 @@ if (isset($_GET["error"])) {
         <?php } ?>
         
         <?php echo "</div>
-        </div>
-        </div>";
+    </div>
+</div>
+</div>
+</div>";
 } 
 $result->free();
 $conn->close();
 ?> 
             
     </section>
-    
+</div>  
+<div id="footer">
+        <div class="fcontent">
+            <div class="column">
+            <img src="https://cdn.discordapp.com/attachments/757590961839669339/1062822979240726719/kdmk.png" alt="LogoRVT">
+                <p>
+                    <strong>KMDK</strong>
+                    Is a Latvian workers cooperative based in RVT college.
+                </p>
+                <p>
+                    We've been making games since 2021 and we're going to keep on upgrading our games on PC.
+                </p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

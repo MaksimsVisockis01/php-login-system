@@ -1,8 +1,10 @@
+@import url('https://fonts.cdnfonts.com/css/superhelio');
+
  *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'superhelio _extended_ultra', sans-serif;
 }
 body{
   margin: 0;
@@ -10,6 +12,7 @@ body{
   background: rgb(194, 193, 193);
   height: 100vh;
   overflow: hidden;
+  font-family: 'superhelio _extended_ultra', sans-serif;
 }
 .center{
   position: absolute;

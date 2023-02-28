@@ -1,3 +1,7 @@
+@import url('https://fonts.cdnfonts.com/css/superhelio');
+body {
+    font-family: 'superhelio _extended_ultra', sans-serif;
+  }
 .user{
     width: 40px;
     border-radius: 50%;
@@ -190,6 +194,16 @@
 
 }
 
+@media only screen and (max-width: 400px){
+    .fcontent {
+      max-width: 700px;
+      margin: auto;
+      column-count: 2;
+      -moz-column-count: 2;
+      font-size: 12px;
+    }
+    }
+
 .trailer{
     text-align: center;
     width: 100%;
@@ -232,15 +246,22 @@ div.trailer iframe{
     width: 100%;
     padding-top: 30px;
 }
-
+.content{
+    max-width: 1140px;
+    min-height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.6) 12px);
+}
 .content h2 {
     position: relative;
     text-align: center;
-    font-size: 4em;
-    color: #A40239;
-    font-family: "berylium_bd",sans-serif;
+    font-size: 3em;
+    color: #EF2D56;
     font-weight: normal;
+    
 }
+
 
 .box {
     width: 740px;
@@ -270,7 +291,7 @@ ul li {
 }
 
 ul li strong {
-    color: #A40239;
+    color: #EF2D56;
 }
 
 .videos {
@@ -303,10 +324,11 @@ ul li strong {
 
  #footer {
     margin-top: 80px;
-    padding-top: 20px;
-    padding-bottom: 40px;
+    padding-top: 1%;
+    padding-bottom: 1%;
     text-align: center;
     background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.5) 12px);
+    color:#F9CF87;
 }
 
 .fcontent {
@@ -314,4 +336,9 @@ ul li strong {
     margin: auto;
     column-count: 2;
     -moz-column-count: 2;
+}
+
+
+.fcontent p strong{
+    color: #EF2D56;
 }

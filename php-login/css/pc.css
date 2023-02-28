@@ -1,9 +1,11 @@
+@import url('https://fonts.cdnfonts.com/css/superhelio');
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'superhelio _extended_ultra', sans-serif;
 }
 
 html {
@@ -13,13 +15,13 @@ html {
 
 body {
   min-height: 100vh;
+  font-family: 'superhelio _extended_ultra', sans-serif;
 }
 
 .container {
   width: min(90%, 1140px);
-  margin: 1rem auto;
+  margin: -1.31%;
 }
-
 .comment__container {
   display: none;
   position: relative;
@@ -68,4 +70,113 @@ body {
 
 .show-replies {
   cursor: pointer;
+}
+
+
+.containerNews{
+  max-width: 500px;
+  margin: 0 auto 1%;
+  word-wrap: break-word;
+}
+@media only screen and (max-width: 400px){
+.containerNews {
+  max-width: 300px;
+  margin: 0 auto 1%;
+  margin-bottom: 5%;
+  word-wrap: break-word;
+}
+.fcontent {
+  max-width: 700px;
+  margin: auto;
+  column-count: 2;
+  -moz-column-count: 2;
+  font-size: 12px;
+}
+}
+.outside{
+  display:block;
+  margin-top:15px;
+  border: 1px solid black;
+  border-radius:5px;
+  padding-bottom:20px;
+  background-color: white;
+}
+
+.inside{
+  border: 2px solid black;
+  display:block;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+
+.headdingtitleouter{  
+  font-size: 32px;
+    border-radius: 5px;
+    background-color: #eeeeee;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.recentnewstitleinner {
+    display: block;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 20px;
+    overflow: hidden;
+
+}
+.innerTitleRecentNews{
+  background: #ffffff;
+  padding: 5px;
+  overflow: hidden;
+  color: #9a2a63!important;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 26px;
+
+}
+
+.padding{
+  margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.recentnews{
+  font-size:12px;
+  color:black;
+  padding:20px;
+  background:white;
+}
+
+.double-background{
+  max-width: 1140px;
+  min-height: calc(100vh);
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.6) 12px);
+  padding: 1%;
+}
+#footer {
+  margin-top: 80px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.5) 12px);
+  color:#F9CF87;
+}
+
+.fcontent {
+  max-width: 700px;
+  margin: auto;
+  column-count: 2;
+  -moz-column-count: 2;
+}
+
+
+.fcontent p strong{
+  color: #EF2D56;
 }

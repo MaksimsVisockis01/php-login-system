@@ -7,7 +7,7 @@ include_once 'header.php';
     src="https://www.youtube-nocookie.com/embed/02G3GUt6Nzo?rel=0&showinfo=0"   frameborder="0" ></iframe>
     </div>
     <div class="download_button" >
-    <button class="btn"><i class="fa fa-download"></i><a href="https://kdmk-studios.itch.io/rvt-adventure"> Download </a></button>
+    <button class="btn" onclick="window.location.href='https://kdmk-studios.itch.io/rvt-adventure';"><i class="fa fa-download"></i><a href=https://kdmk-studios.itch.io/rvt-adventure> Download </a></button>
     </div>
     <div id="contentWrapper">
         <div class="content">
@@ -38,13 +38,11 @@ include_once 'header.php';
                     </li>
                 </ul>
                 <div class = 'videos'>
-                    <video id="video_one" autobuffer="autobuffer" autoplay="autoplay" loop="loop" muted="muted" poster="https://dead-cells.com/img/roofPreview.jpg">
-                        <source src="https://dead-cells.com/video/roof.mp4" type="video/mp4">
-                        <source src="https://dead-cells.com/video/roof.webm" type="video/webm">
+                <video id="video_one" autobuffer="autobuffer" autoplay="autoplay" loop="loop" muted="muted">
+                        <source src="videos/gameplay2.mp4" type="video/mp4">
                     </video>
-                    <video id="video_two" autobuffer="autobuffer" autoplay="autoplay" loop="loop" muted="muted" poster="https://dead-cells.com/img/bossFightPreview.jpg">
-                        <source src="https://dead-cells.com/video/bossFight.mp4" type="video/mp4">
-                        <source src="https://dead-cells.com/video/bossFight.webm" type="video/webm">
+                    <video id="video_two" autobuffer="autobuffer" autoplay="autoplay" loop="loop" muted="muted">
+                        <source src="videos/gameplay1.mp4" type="video/mp4">
                     </video>
                 </div> 
             </div>
@@ -54,6 +52,7 @@ include_once 'header.php';
     <div id="footer">
         <div class="fcontent">
             <div class="column">
+            <img src="https://cdn.discordapp.com/attachments/757590961839669339/1062822979240726719/kdmk.png" alt="LogoRVT">
                 <p>
                     <strong>KMDK</strong>
                     Is a Latvian workers cooperative based in RVT college.
